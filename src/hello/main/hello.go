@@ -6,16 +6,19 @@ import (
 )
 
 //func main必须需要在名叫main的package下
-func main() {
-	//fmt.Println("hello go go go")
-	//test()
-	//constTest()
-	//coreReturn()
-	//zhizhen()
-	//array()
-	//sliceTest()
-	slice2Test()
-}
+//func main() {
+//	//fmt.Println("hello go go go")
+//	//test()
+//	//constTest()
+//	//coreReturn()
+//	//zhizhen()
+//	//array()
+//	//sliceTest()
+//	//slice2Test()
+//	//mapTest()
+//	//map2Test()
+//	strutTest()
+//}
 
 // 单独声明
 var name string
@@ -164,5 +167,61 @@ func slice2Test() {
 
 	b := a[1:2]
 	fmt.Println(b)
+
+}
+
+func mapTest() {
+	// 第一种
+	var testMap map[int]string
+	//开辟空间
+	testMap = make(map[int]string, 2)
+	testMap[1] = "one"
+	testMap[2] = "two"
+	fmt.Println("testMap:", testMap)
+
+	// 第二种
+	testMap2 := make(map[int]string)
+	testMap2[1] = "one"
+	testMap2[2] = "two"
+
+	fmt.Println("testMap2:", testMap2)
+
+	// 第三
+	testmap3 := map[int]string{
+		1: "one",
+		2: "two",
+	}
+	fmt.Println("testMap3:", testmap3)
+
+}
+
+func updateMap(stuMap map[int]string) {
+	stuMap[2] = "小六"
+	fmt.Println(stuMap)
+}
+
+func map2Test() {
+	stuMap := map[int]string{
+		1: "小明",
+		2: "张三",
+		3: "李四",
+	}
+
+	// 遍历
+	for key, value := range stuMap {
+		fmt.Println(key)
+		fmt.Println(value)
+	}
+
+	delete(stuMap, 3)
+	fmt.Println(stuMap)
+
+	// emm
+	stuMap[3] = "王五"
+	fmt.Println(stuMap)
+	updateMap(stuMap)
+}
+
+func strutTest() {
 
 }
